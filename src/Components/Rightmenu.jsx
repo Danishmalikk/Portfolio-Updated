@@ -1,44 +1,82 @@
 import React, { useState } from "react";
-import SortIcon from '@mui/icons-material/Sort';
-import CloseIcon from '@mui/icons-material/Close';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
- 
+import { AnimatePresence, motion } from "framer-motion";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LeetCodeIcon from "./ui/LeetCodeIcon";
+import { navLinks, profile } from "../data";
 
- 
-
-const links = [
-  { id: 1, title: "Homepage", url: "#home" },
-  { id: 2, title: "About", url: "#about" },
-  { id: 3, title: "Project", url: "#project" },
-  { id: 4, title: "Contact", url: "#contact" },
-];
-
-const Menu = () => {
+const Rightmenu = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className=" ">
-      {open ? (<CloseIcon  onClick={() => setOpen(false)} className="cursor-pointer" height={20} width={30}/>) 
-      : 
-      (<SortIcon onClick={() => setOpen(true)} className="cursor-pointer" height={20} width={30}/>)}
+    <div>
+      <button
+        onClick={() => setOpen(true)}
+        className="text-slate-200 transition hover:text-accent"
+        aria-label="Open menu"
+      >
+        <MenuIcon fontSize="large" />
+      </button>
 
-      {open && <div className="bg-black w-full z-10 text-2xl flex gap-14 flex-col items-center justify-center absolute left-0 h-screen">
-        {links.map((link) => (<a onClick={() => setOpen(false)} key={link.id} href={link.url}>
-            {link.title}
-          </a>
-        ))}
-       <div className='flex flex-row justify-center gap-10 text-blue-500 text-5xl'> 
-        <a className="hover:text-white" href='https://github.com/Danishmalik1997' target='_blank' rel='noreferrer' > <GitHubIcon fontSize='large'/> </a>
-        <a className="hover:text-white" href='https://www.instagram.com/danish.malik0802/' target='_blank' rel='noreferrer' > <InstagramIcon fontSize='large'/> </a>
-        <a className="hover:text-white" href='https://www.linkedin.com/in/danishmalikk/' target='_blank' rel='noreferrer' > <LinkedInIcon fontSize='large'/> </a>
-        <a className="hover:text-white" href='https://twitter.com/DanishMalik0802?t=mg-d0zUplJ0LjuCdjacUKA&s=08' target='_blank' rel='noreferrer' > <TwitterIcon fontSize='large'/> </a>
-      </div>
-      </div>} 
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: "-100%" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "-100%" }}
+            transition={{ type: "tween", duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-8 bg-ink/95 backdrop-blur-xl"
+          >
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute right-6 top-6 text-slate-200 transition hover:text-accent"
+              aria-label="Close menu"
+            >
+              <CloseIcon fontSize="large" />
+            </button>
+
+            {navLinks.map((link, i) => (
+              <a
+                key={link.url}
+                href={`#${link.url}`}
+                onClick={() => setOpen(false)}
+                className="font-mono text-2xl text-slate-200 transition hover:text-accent"
+              >
+                <span className="text-accent">0{i + 1}.</span> {link.title}
+              </a>
+            ))}
+
+            <a
+              href={require(`../resources/${profile.resume}`)}
+              download
+              onClick={() => setOpen(false)}
+              className="rounded-lg border border-accent/40 px-6 py-2.5 font-mono text-accent transition hover:bg-accent/10"
+            >
+              Resume
+            </a>
+
+            <div className="mt-6 flex gap-8 text-slate-400">
+              <a href={profile.socials.github} target="_blank" rel="noreferrer" className="hover:text-accent">
+                <GitHubIcon />
+              </a>
+              <a href={profile.socials.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent">
+                <LinkedInIcon />
+              </a>
+              <a href={profile.socials.leetcode} target="_blank" rel="noreferrer" aria-label="LeetCode" className="hover:text-accent">
+                <LeetCodeIcon size={24} />
+              </a>
+              <a href={profile.socials.twitter} target="_blank" rel="noreferrer" className="hover:text-accent">
+                <TwitterIcon />
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
 
-export default Menu;
+export default Rightmenu;

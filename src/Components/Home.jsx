@@ -1,25 +1,95 @@
 import React from "react";
-import WorkingMan from "../images/man_working.jpg";
-import Resume from "./Resume";
+import { motion } from "framer-motion";
+import { profile, stats } from "../data";
+import MagneticButton from "./ui/MagneticButton";
+import CountUp from "./ui/CountUp";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
+const item = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const Home = () => {
   return (
-    <div id="home" className="mt-20 md:p-20 flex md:h-[calc(86vh-4rem)] flex-col gap-6 items-start text-center md:flex-row md:items-center lg:justify-items-end lg:text-justify ">
-      <div className="font-mono flex-1 text-left gap-10">
-        <p className="text-blue-500"> Hi, my name is </p>
-        <h1 className="text-3xl text-gray-200 lg:text-6xl font-extrabold">Danish Malik </h1>
-        <p className="text-gray-400 font-extrabold text-2xl lg:text-4xl"> I build things for the web. </p>
-        <h1 className="text-md text-gray-200 mb-4 md:text-lg font-semibold">
-          A passionate Front-end React Developer based in Noida,Delhi NCR.📍<br/> 
-          I enjoy working on every aspect of web development, from the user <br/>
-          interface to the server logic.
-        </h1>
-        <Resume/> 
-      </div>
-      <div className="shadow-xl hover:animate-pulse border-2 border-gray-400 rounded-md md:flex-row hover:shadow-blue-500 transition ease-in-out delay-200  hover:-translate-y-1 hover:scale-110 duration-700 ">
-         <img src={WorkingMan} alt="" className="object-cover w-80 md:h-64 md:w-96" />
-      </div>
-    </div>
+    <section
+      id="home"
+      className="flex min-h-screen flex-col justify-center pt-28 pb-16"
+    >
+      <motion.div variants={container} initial="hidden" animate="show" className="max-w-3xl">
+        <motion.p
+          variants={item}
+          className="mb-5 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-4 py-1.5 font-mono text-sm text-accent"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+          </span>
+          Available for new opportunities
+        </motion.p>
+
+        <motion.p variants={item} className="font-mono text-accent">
+          Hi, my name is
+        </motion.p>
+
+        <motion.h1
+          variants={item}
+          className="mt-2 text-4xl font-extrabold tracking-tight text-slate-100 sm:text-6xl lg:text-7xl"
+        >
+          {profile.name}.
+        </motion.h1>
+
+        <motion.h2
+          variants={item}
+          className="mt-3 text-2xl font-bold tracking-tight text-slate-400 sm:text-4xl lg:text-5xl"
+        >
+          I build things for the <span className="text-gradient">backend</span> &amp; the web.
+        </motion.h2>
+
+        <motion.p variants={item} className="mt-6 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
+          {profile.blurb} Strong in <span className="text-slate-200">Java, Spring Boot, REST APIs &amp; microservices</span>,
+          with hands-on Node.js, NestJS, React and PostgreSQL.
+        </motion.p>
+
+        <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-4">
+          <MagneticButton
+            href="#projects"
+            className="inline-block rounded-lg bg-gradient-to-r from-accent to-iris px-6 py-3 font-semibold text-ink shadow-glow"
+          >
+            View my work
+          </MagneticButton>
+          <MagneticButton
+            href="#contact"
+            className="inline-block rounded-lg border border-white/15 px-6 py-3 font-semibold text-slate-200 transition-colors hover:border-accent/50 hover:text-accent"
+          >
+            Get in touch
+          </MagneticButton>
+        </motion.div>
+      </motion.div>
+
+      {/* Stat strip */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4"
+      >
+        {stats.map((s) => (
+          <motion.div
+            key={s.label}
+            variants={item}
+            className="glass rounded-xl p-4 transition hover:-translate-y-1"
+          >
+            <CountUp value={s.value} className="font-mono text-xl font-bold text-gradient sm:text-2xl" />
+            <div className="mt-1 text-xs text-slate-400 sm:text-sm">{s.label}</div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
   );
 };
 

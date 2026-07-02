@@ -1,12 +1,24 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
+import { profile } from "../data";
 
 const RightContent = () => {
-  const emailAddress = 'dev_danish1997@hotmail.com'; 
   return (
-    <div className='text-white hidden md:flex p-4 fixed -right-20 bottom-28 rotate-90 bg-blue-500 hover:shadow-white hover:shadow-lg'>
-      <a href={`mailto:${emailAddress}`} target='_blank' rel='noreferrer'> dev_danish1997@hotmail.com</a>
-    </div>
-  )
-}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.3, duration: 0.6 }}
+      className="fixed bottom-0 right-8 z-30 hidden flex-col items-center gap-6 md:flex"
+    >
+      <a
+        href={`mailto:${profile.email}`}
+        className="font-mono text-xs tracking-widest text-slate-500 transition hover:-translate-y-1 hover:text-accent [writing-mode:vertical-rl]"
+      >
+        {profile.email}
+      </a>
+      <span className="h-24 w-px bg-gradient-to-b from-white/25 to-transparent" />
+    </motion.div>
+  );
+};
 
-export default RightContent
+export default RightContent;
