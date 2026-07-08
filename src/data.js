@@ -182,17 +182,17 @@ export const education = {
 
 export const projects = [
   {
-    name: "Filmy World",
-    tag: "Full-Stack · Live",
-    problem: "Movie lovers lacked a simple, social space to discover, review and share films with friends.",
+    name: "Veer Fitness",
+    tag: "Frontend · Live",
+    problem:
+      "Independent personal trainers need a professional online presence where prospective clients can explore training programs, see real transformation results, and book a session without friction.",
     solution:
-      "A feature-rich movies platform with OTP-based authentication & authorization, user reviews and star ratings, friend invites, and a Firebase-backed catalog users can add to.",
-    role: "Solo full-stack developer — UI, auth flow, state management and database.",
-    stack: ["JavaScript", "React", "React Router", "Material UI", "Firebase", "Tailwind CSS"],
-    link: "https://filmy-world-sigma.vercel.app/",
+      "A personal-trainer marketing & booking site with GSAP-driven animated sections, a full services lineup (personal training, group classes, yoga, online coaching, nutrition plans, fitness assessments), a client-transformation & testimonial gallery, and a booking form that routes leads straight to the trainer's WhatsApp for instant session scheduling.",
+    role: "Solo front-end developer — component architecture, animations and responsive layout.",
+    stack: ["React", "React Router", "Material UI", "GSAP", "Tailwind CSS"],
+    link: "https://personal-trainer-veer-fitness-j3wv.vercel.app/",
     repo: "https://github.com/Danishmalikk",
-    image: "Fimyworld.png",
-    demo: ["Mobile No — 8869060519", "Password — Filmyworld"],
+    image: "VeerFitness.png",
   },
   {
     name: "Pizza-Sizza",
@@ -205,6 +205,19 @@ export const projects = [
     link: "https://pizza-sizza-delivery-app.vercel.app/",
     repo: "https://github.com/Danishmalikk",
     image: "Pizza-sizza.png",
+  },
+  {
+    name: "Ocean Evoke",
+    tag: "Full-Stack · Live",
+    problem:
+      "Ocean-conservation-minded shoppers had no lifestyle brand that paired sustainable, ocean-inspired products with real diving expertise and transparent conservation impact.",
+    solution:
+      "India's first ocean-conservation social enterprise storefront — shop collections (towels, unisex apparel, underwater photography prints) alongside dive-training, dive-travel and sustainability-consulting services, with Google sign-in, cart/wishlist/checkout, an 'Evoke Tribe' rewards program, and a public impact & conservation blog where 1% of every purchase funds ocean-conservation efforts.",
+    role: "Full-stack developer — storefront, authentication, cart/checkout flow and content pages.",
+    stack: ["React", "React Router", "Tailwind CSS", "Vite", "Google OAuth", "Axios"],
+    link: "https://oceanevoke.com/",
+    repo: "https://github.com/Danishmalikk",
+    image: "OceanEvoke.png",
   },
 ];
 

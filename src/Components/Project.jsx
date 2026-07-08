@@ -6,12 +6,14 @@ import SectionTitle from "./ui/SectionTitle";
 import { projects } from "../data";
 
 // Statically require project images from the images folder
-import Fimyworld from "../images/Fimyworld.png";
+import VeerFitness from "../images/VeerFitness.png";
 import PizzaSizza from "../images/Pizza-sizza.png";
+import OceanEvoke from "../images/OceanEvoke.png";
 
 const imageMap = {
-  "Fimyworld.png": Fimyworld,
+  "VeerFitness.png": VeerFitness,
   "Pizza-sizza.png": PizzaSizza,
+  "OceanEvoke.png": OceanEvoke,
 };
 
 const Field = ({ label, children }) => (
