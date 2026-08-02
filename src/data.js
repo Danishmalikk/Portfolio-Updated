@@ -9,7 +9,7 @@ export const profile = {
   location: "Noida, Delhi NCR · India",
   email: "danishmalik.ai97@gmail.com",
   phone: "+91 8869060519",
-  resume: "Danish-SDE2.pdf", // file lives in src/resources
+  resume: "Danish(Backend_Engineer).pdf", // file lives in src/resources
   socials: {
     github: "https://github.com/Danishmalikk",
     linkedin: "https://www.linkedin.com/in/danishmalikk/",
