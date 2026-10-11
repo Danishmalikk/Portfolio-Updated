@@ -2,10 +2,10 @@
 
 export const profile = {
   name: "Danish Malik",
-  role: "Full Stack Java Developer · Backend Engineer",
+  role: "Java Full Stack Developer · Backend Engineer",
   tagline: "I design and scale backend systems that move money, data and people.",
   blurb:
-    "Full Stack Java Developer with 3.5+ years building and scaling backend systems and end-to-end web apps for fintech, lending and SaaS platforms.",
+    "Java Backend Engineer with 4 years designing and scaling backend systems and end-to-end web apps for fintech, lending and SaaS platforms.",
   location: "Noida, Delhi NCR · India",
   email: "danishmalik.ai97@gmail.com",
   phone: "+91 8869060519",
@@ -19,30 +19,31 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "3.5+", label: "Years of experience" },
-  { value: "8+", label: "Microservices architected" },
-  { value: "10s → 2.5ms", label: "API latency cut" },
+  { value: "4+", label: "Years of experience" },
+  { value: "3000+", label: "Field agents served" },
+  { value: "15s → 50ms", label: "API latency cut" },
   { value: "60–70%", label: "Manual effort reduced" },
 ];
 
 export const about = [
-  "I'm a backend-focused Full Stack Java Developer based in Noida,UP. Over the last 3.5+ years I've designed service-oriented systems and shipped production features across customer onboarding, KYC, underwriting and loan processing for fintech and lending platforms.",
-  "My core is Java, Spring Boot, REST APIs and microservices, backed by hands-on Node.js, NestJS, React and PostgreSQL. I care about performance (I've cut API response times from ~5s to 10ms), automation that removes 60–70% of manual work, and clean, observable systems.",
-  "I've also led small engineering teams — owning architecture decisions, code reviews and delivery across the full SDLC, from requirements to deployment and monitoring.",
+  "I'm a backend-focused Java Full Stack Developer based in Noida, UP. Over the last 4 years I've designed service-oriented systems and shipped production features across customer onboarding, KYC, underwriting and loan processing for fintech, lending and SaaS platforms.",
+  "My core is Java, Spring Boot, REST APIs and microservices, backed by hands-on Node.js, NestJS, React and PostgreSQL. I care about performance (I've cut an API from 15 seconds to 50 ms), automation that removes 60–70% of manual work, and clean, observable systems.",
+  "I've also led a cross-functional engineering team — owning architecture decisions, code reviews and delivery across the full SDLC, from business requirements to deployment and monitoring in production.",
 ];
 
 // Short journey milestones for the About timeline
 export const journey = [
   { year: "2019", text: "B.Tech in Computer Science — where the fascination with building for the web began." },
-  { year: "2023", text: "Started as an Associate Developer shipping full-stack features, auth & MFA on production platforms." },
-  { year: "2024", text: "Moved deeper into fintech — APIs, caching and monolith-to-microservices migration." },
-  { year: "2025", text: "Leading backend architecture for lending & debt-collection systems at scale." },
+  { year: "2022", text: "Newton School — intensive DSA & full-stack program in Java, JavaScript, React and Node.js." },
+  { year: "2023", text: "Started as an Associate Developer shipping React UIs and communication modules at scale." },
+  { year: "2024", text: "Moved into fintech — Spring Boot lending modules, caching and a Strapi v3 migration for an SME lender." },
+  { year: "2025", text: "Leading backend architecture for lending & debt-collection platforms serving 3000+ agents." },
 ];
 
 export const skills = [
   {
     group: "Languages",
-    items: ["Java", "JavaScript", "TypeScript", "SQL", "Python"],
+    items: ["Java 8 / 17 / 21", "JavaScript", "TypeScript", "SQL", "Python"],
   },
   {
     group: "Backend & Frameworks",
@@ -58,15 +59,18 @@ export const skills = [
       "Express.js",
       "GraphQL",
       "Event-Driven Arch",
+      "Maven",
+      "Frappe",
+      "Strapi",
     ],
   },
   {
     group: "Frontend",
-    items: ["React.js", "Redux", "Next.js", "TanStack Query", "Tailwind CSS", "Material UI"],
+    items: ["React.js", "Redux", "Next.js", "TanStack Query", "React Native", "Tailwind CSS", "Material UI"],
   },
   {
     group: "Databases & Caching",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Query Optimization", "Indexing"],
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Query Optimization", "Database Design", "Indexing"],
   },
   {
     group: "Messaging & Async",
@@ -74,15 +78,29 @@ export const skills = [
   },
   {
     group: "Cloud & DevOps",
-    items: ["AWS (EC2, S3, Lambda, CloudFront, Amplify)", "Docker", "Nginx", "GitHub Actions", "CI/CD", "Cloudflare"],
+    items: [
+      "AWS (EC2, S3, Lambda, CloudFront, Amplify, VPC, CloudWatch)",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "Nginx",
+      "GitHub Actions",
+      "CI/CD",
+      "Cloudflare",
+      "Grafana",
+    ],
   },
   {
     group: "Security & Auth",
-    items: ["JWT", "OAuth2", "AuthN / AuthZ", "MFA"],
+    items: ["Spring Security", "JWT", "OAuth2", "AuthN / AuthZ", "MFA"],
   },
   {
     group: "AI & Automation",
-    items: ["OpenAI", "LangChain", "LangGraph", "RAG Workflows", "FastAPI", "Puppeteer"],
+    items: ["OpenAI", "LangChain", "LangGraph", "RAG Workflows", "FastAPI", "Puppeteer", "LLM Integrations"],
+  },
+  {
+    group: "Fintech Integrations",
+    items: ["CKYC (CERSAI)", "Decentro", "TransUnion CIBIL", "Experian", "Razorpay", "DLT SMS"],
   },
 ];
 
@@ -94,18 +112,17 @@ export const experience = [
     period: "Nov 2025 — Present",
     current: true,
     highlights: [
-      "Led a cross-functional backend and frontend team, owning architecture decisions and code reviews across fintech and debt-collection platforms.",
-      "Designed a distributed backend where a Java Spring Boot background-verification microservice integrates with a NestJS loan-servicing core over REST + webhooks, backed by PostgreSQL and secured with a shared JWT; containerized with Docker and deployed on AWS EC2 (services) and AWS Amplify (web).",
-      "Delivered Tejas Field Force — a debt-collection system serving 1000+ field agents that replaced manual WhatsApp operations and reduced manual effort by 60–70%.",
-      "Consolidated collections, portfolio monitoring and reporting into a centralized admin dashboard, giving managers a single view across 10+ key metrics.",
-      "Launched real-time field tracking (attendance, live location, visit history, collections, payouts) that raised visibility for 100+ agents.",
-      "Automated MIS and portfolio reporting, cutting prep time by nearly 50% (hours to under 10 minutes), and added audit logs that eliminated data-manipulation incidents.",
-      "Developed multilingual AI voice-bot campaigns that process thousands of customer records and trigger automated outbound calls, scaling outreach 10x beyond manual capacity.",
-      "Partnered with client teams and product owners across 15+ weekly syncs to align metric definitions and sustain reporting accuracy above 98%.",
-      "Built a bulk-upload module backed by background jobs (BullMQ) that asynchronously processes thousands of task records per upload, preventing request timeouts and keeping the UI responsive.",
-      "Integrated an external geocoding API within the upload module to derive latitude/longitude from task-file addresses, persisting results via batched DB updates to reduce database round-trips.",
+      "Led a cross-functional backend and frontend team, owning architecture decisions and code reviews across fintech lending and debt-collection platforms.",
+      "Designed a distributed backend where a Spring Boot background-verification microservice talks to a NestJS loan-servicing core over REST and webhooks with shared JWT auth — both on PostgreSQL, containerized with Docker and deployed on AWS EC2 and Amplify.",
+      "Built Tejas Field Force from scratch — a debt-collection platform and React Native app serving 3000+ field agents (attendance, case allocation, GPS-tagged visits, collections, payouts) that replaced manual WhatsApp operations and cut manual effort by 60–70%.",
+      "Built the CKYC service for RinnCrest, a digital lending platform, fetching and validating customer KYC records from the Central KYC Registry (CERSAI) during loan onboarding to remove repeated document collection.",
+      "Integrated third-party fintech APIs across the loan lifecycle — Decentro (KYC/bank verification), TransUnion CIBIL & Experian (credit bureau checks), Razorpay (disbursements & repayments) and DLT-compliant SMS — connected to a Frappe-based back-office admin.",
+      "Built a centralized admin dashboard tracking 40+ collection and portfolio metrics; automated MIS reporting cut prep time from hours to under 10 minutes (~80%), and audit logs eliminated data-manipulation incidents.",
+      "Developed multilingual AI voice-bot campaigns that trigger automated outbound calls across thousands of customer records, scaling outreach 10x beyond manual capacity.",
+      "Built a BullMQ-backed bulk-upload pipeline that processes thousands of task records asynchronously, geocoding addresses via an external API and batching DB writes to avoid timeouts.",
+      "Optimized NestJS/PostgreSQL APIs — removed N+1 queries, added targeted indexes and Redis caching, cursor pagination and TypeORM relation tuning — reducing p95 latency by 40%.",
     ],
-    stack: ["Java", "Spring Boot", "NestJS", "PostgreSQL", "Webhooks", "JWT", "Docker", "AWS", "BullMQ"],
+    stack: ["Java", "Spring Boot", "NestJS", "PostgreSQL", "Redis", "BullMQ", "React Native", "Frappe", "Docker", "AWS"],
   },
   {
     role: "Software Developer",
@@ -113,43 +130,65 @@ export const experience = [
     domain: "IT Services · Fintech",
     period: "Sep 2024 — Jul 2025",
     highlights: [
-      "Designed APIs and microservices with Java Spring Boot, Node.js, NestJS, MongoDB and Python for 2 fintech clients (Nisa Finance, Immi Book).",
-      "Cut homepage API response time from 15s to 6ms via a Redis + in-memory caching layer, and lifted overall app performance ~30%.",
-      "Built lending modules for KYC verification, loan processing, transactions and financial verification.",
-      "Streamlined underwriting with secure Puppeteer-based banking data-extraction bots for 2 banks (FNB, Standard Bank).",
-      "Migrated the backend from a legacy monolith to a scalable service-oriented architecture.",
-      "Built 15+ reusable React components & dashboards, lifting frontend load performance ~25% via lazy loading, memoization and code splitting.",
+      "Developed backend services in Java Spring Boot and NestJS for Nisa Finance, a South African SME lending marketplace connecting businesses with finance providers, delivering client-requested features to its SME and finance-provider portals.",
+      "Built Spring Boot lending modules for invoice discounting and purchase-order finance — KYC and director verification, application processing, transaction and repayment management — supporting a fully online flow with credit decisions in 2 business days.",
+      "Cut homepage API response time from 15 seconds to 50 ms with a Redis and in-memory caching layer; query optimization and a CDN on CloudFront and Cloudflare improved overall performance by 30%.",
+      "Streamlined SME underwriting with secure Puppeteer-based scraping bots that extract bank-statement data from FNB and Standard Bank, replacing manual statement review.",
+      "Migrated the full backend from Zen API to Strapi v3 — data models, APIs and business logic — with no disruption to live lending operations.",
+      "Acted as the primary technical contact for the client: gathered requirements, scoped feature requests and managed delivery timelines.",
+      "Built 15+ reusable React.js components and dashboards, improving frontend load performance by ~25% through lazy loading, memoization and code splitting.",
     ],
-    stack: ["Java", "Spring Boot", "Node.js", "NestJS", "MongoDB", "Redis", "React", "AWS"],
+    stack: ["Java", "Spring Boot", "NestJS", "Strapi", "Redis", "Puppeteer", "React", "AWS", "Cloudflare"],
+  },
+  {
+    role: "React Developer",
+    company: "Alpha Technologies Inc.",
+    domain: "E-commerce · Enterprise",
+    period: "Feb 2024 — May 2024",
+    highlights: [
+      "Delivered full-stack features for production e-commerce and enterprise platforms (Seal360, TCSK), spanning backend APIs, authentication and admin panels.",
+      "Implemented authentication, authorization and Multi-Factor Authentication (MFA) on a JWT-based security architecture.",
+      "Integrated 20+ REST API endpoints (GET, POST, PUT, DELETE) across contracts and core business modules.",
+      "Strengthened data integrity with input validation and application-level security using Yup and Crypto libraries.",
+    ],
+    stack: ["React", "JWT", "MFA", "REST APIs", "Yup"],
   },
   {
     role: "Associate Software Developer",
     company: "BEGAWN IT Pvt. Ltd.",
-    domain: "E-commerce · Enterprise",
-    period: "Jan 2023 — Aug 2024",
+    domain: "Web Apps · Communications",
+    period: "Jan 2023 — Feb 2024",
     highlights: [
-      "Delivered full-stack features for production e-commerce & enterprise platforms (Seal360, TCSK) — backend APIs, auth and admin panels.",
-      "Implemented AuthN, AuthZ and Multi-Factor Authentication on a JWT-based security architecture.",
-      "Integrated 20+ REST endpoints (GET/POST/PUT/DELETE) across contracts and core business modules.",
-      "Hardened data integrity with input validation and app-level security using Yup and Crypto.",
-      "Created user-activity, application and error-logging systems that cut issue-resolution time by 20%.",
-      "Shipped communication modules — WhatsApp broadcasting (Plivo), SMS and bulk push notifications (Firebase Admin SDK).",
+      "Developed and enhanced user interfaces with React.js, Tailwind CSS and Material UI, managing state with Redux Toolkit.",
+      "Implemented layouts, reusable components and interactive features like modals, charts and dynamic tables.",
+      "Optimized React components with memoization, lazy loading and code splitting, improving rendering speed by 30% with WCAG accessibility compliance.",
+      "Shipped communication modules — WhatsApp broadcasting via Plivo, SMS and bulk push notifications via Firebase Admin SDK — reaching thousands of users per campaign.",
     ],
-    stack: ["Node.js", "JWT", "MFA", "REST APIs", "Firebase", "Plivo"],
+    stack: ["React", "Redux Toolkit", "Tailwind CSS", "Material UI", "Firebase", "Plivo"],
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "Newton School",
+    domain: "Bengaluru · Training",
+    period: "Jun 2022 — Nov 2022",
+    highlights: [
+      "Completed an intensive program in data structures & algorithms and full-stack development (Java, JavaScript, React, Node.js), shipping multiple full-stack projects that applied core CS fundamentals to real engineering problems.",
+    ],
+    stack: ["Java", "DSA", "JavaScript", "React", "Node.js"],
   },
 ];
 
 // Real, measurable wins pulled from the resume — the "achievements" story.
 export const impact = [
   {
-    metric: "10s → 2.5ms",
+    metric: "15s → 50ms",
     title: "API performance",
-    detail: "Cut response times by orders of magnitude with Redis + in-memory caching and query optimization.",
+    detail: "Cut a homepage API from 15 seconds to 50 ms with a Redis + in-memory caching layer for an SME lending platform.",
   },
   {
     metric: "60–70%",
     title: "Manual effort removed",
-    detail: "Replaced manual WhatsApp-based debt-collection ops with an automated field-force system for 1000+ agents.",
+    detail: "Replaced manual WhatsApp-based debt-collection ops with Tejas Field Force, serving 3000+ field agents.",
   },
   {
     metric: "10x",
@@ -157,12 +196,12 @@ export const impact = [
     detail: "Multilingual AI voice-bot campaigns that trigger automated outbound calls far beyond manual capacity.",
   },
   {
-    metric: "8+",
-    title: "Microservices architected",
-    detail: "Designed and deployed distributed services with Spring Boot, NestJS, PostgreSQL and Docker on AWS.",
+    metric: "40%",
+    title: "Lower p95 latency",
+    detail: "Removed N+1 queries, added targeted indexes, Redis caching and cursor pagination across NestJS/PostgreSQL APIs.",
   },
   {
-    metric: "~50%",
+    metric: "~80%",
     title: "Reporting time saved",
     detail: "Automated MIS & portfolio reporting from hours down to under 10 minutes, with tamper-proof audit logs.",
   },

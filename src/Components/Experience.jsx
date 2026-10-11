@@ -17,7 +17,7 @@ const Experience = () => {
       <SectionTitle
         index="03"
         title="Experience Roadmap"
-        subtitle="Three roles, one throughline: shipping backend systems that create measurable impact."
+        subtitle="Five stops, one throughline: shipping backend systems that create measurable impact."
       />
 
       <div ref={trackRef} className="relative">
@@ -35,10 +35,11 @@ const Experience = () => {
             return (
               <motion.div
                 key={job.company}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: left ? -60 : 60, rotateY: left ? 8 : -8 }}
+                whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.55 }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                style={{ transformPerspective: 1200 }}
                 className={`relative pl-12 md:w-1/2 md:pl-0 ${
                   left ? "md:pr-12 md:text-right" : "md:ml-auto md:pl-12"
                 }`}

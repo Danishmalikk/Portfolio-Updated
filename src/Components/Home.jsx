@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { profile, stats } from "../data";
 import MagneticButton from "./ui/MagneticButton";
 import CountUp from "./ui/CountUp";
@@ -14,12 +14,28 @@ const item = {
 };
 
 const Home = () => {
+  const ref = useRef(null);
+  const reduce = useReducedMotion();
+  // As the hero scrolls away, the headline lifts, shrinks and blurs out.
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], [0, -160]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
+  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const blur = useTransform(scrollYProgress, [0, 0.7], ["blur(0px)", "blur(8px)"]);
+
   return (
     <section
+      ref={ref}
       id="home"
       className="flex min-h-screen flex-col justify-center pt-28 pb-16"
     >
-      <motion.div variants={container} initial="hidden" animate="show" className="max-w-3xl">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        style={reduce ? undefined : { y, scale, opacity, filter: blur }}
+        className="max-w-3xl origin-top-left"
+      >
         <motion.p
           variants={item}
           className="mb-5 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-4 py-1.5 font-mono text-sm text-accent"

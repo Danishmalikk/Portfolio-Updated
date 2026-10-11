@@ -16,10 +16,10 @@ const Achievements = () => {
         {impact.map((item, i) => (
           <motion.div
             key={item.title}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40, scale: 0.85 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
+            transition={{ type: "spring", stiffness: 140, damping: 16, delay: (i % 3) * 0.1 }}
             className="glass group relative overflow-hidden rounded-2xl p-6 transition hover:-translate-y-1 hover:shadow-card"
           >
             <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-accent/10 blur-2xl transition group-hover:bg-accent/20" />

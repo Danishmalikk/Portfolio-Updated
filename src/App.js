@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { useScroll, motion } from "framer-motion";
 import Preloader from "./Components/Preloader";
 import AnimatedBackground from "./Components/AnimatedBackground";
@@ -15,6 +16,9 @@ import LeftContent from "./Components/LeftContent";
 import RightContent from "./Components/RightContent";
 import BackToTop from "./Components/BackToTop";
 
+// Three.js is heavy — load the 3D backdrop in its own chunk after first paint.
+const ThreeScene = lazy(() => import("./Components/ThreeScene"));
+
 function App() {
   const { scrollYProgress } = useScroll();
 
@@ -27,6 +31,9 @@ function App() {
     >
       <Preloader />
       <AnimatedBackground />
+      <Suspense fallback={null}>
+        <ThreeScene />
+      </Suspense>
       <CursorFollower />
 
       {/* Scroll progress bar */}
